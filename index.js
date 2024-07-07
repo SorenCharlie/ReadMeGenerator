@@ -92,13 +92,13 @@ ${answers.contributing}
 ${answers.test}
 
 ## License
-[![License](${selectedLicense.badge})](${selectedLicense.name})
+![License](${selectedLicense.badge})(${selectedLicense.name})
 
 This application is covered under the ${selectedLicense.name}.
 
 ## Questions
-${answers.githubUsername} ${answers.githubEmail}
-
+${answers.githubUsername} 
+For any questions, please email ${answers.githubEmail}.
 `;
 
     // Write the generated README content to a file
