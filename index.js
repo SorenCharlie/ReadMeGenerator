@@ -26,11 +26,6 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'table of contentx',
-        message: 'Enter project TOC:'
-    },
-    {
-        type: 'input',
         name: 'installation',
         message: 'Enter project installation steps:'
     },
@@ -41,16 +36,9 @@ inquirer.prompt([
     },
 
     {
-        type: 'list',
-        name: 'license',
-        message: 'Choose a license for your application:',
-        choices: licenses.map(license => license.name)
-    },
-
-    {
         type: 'input',
         name: 'contributing',
-        message: 'Enter project contribution:'
+        message: 'Enter project contributions:'
     },
     {
         type: 'input',
@@ -58,9 +46,20 @@ inquirer.prompt([
         message: 'Enter project testing information:'
     },
     {
+        type: 'list',
+        name: 'license',
+        message: 'Choose a license for your application:',
+        choices: licenses.map(license => license.name)
+    },
+    {
         type: 'input',
-        name: 'questions',
-        message: 'Enter questions for project:'
+        name: 'githubUsername',
+        message: 'Enter GitHub username and a link to GitHub profile:'
+    },
+    {
+        type: 'input',
+        name: 'githubEmail',
+        message: 'Enter GitHub email:'
     },
 
     // Add more prompts for other sections like installation, usage, license, etc.
@@ -71,6 +70,14 @@ inquirer.prompt([
 
 ## Description
 ${answers.description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Test Instructions](#test-instructions)
+- [License](#license)
+- [Questions](#questions)
 
 ## Instalation
 ${answers.installation}
@@ -88,6 +95,10 @@ ${answers.test}
 [![License](${selectedLicense.badge})](${selectedLicense.name})
 
 This application is covered under the ${selectedLicense.name}.
+
+## Questions
+${answers.githubUsername} ${answers.githubEmail}
+
 `;
 
     // Write the generated README content to a file
