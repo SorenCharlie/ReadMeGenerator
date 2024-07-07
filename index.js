@@ -1,5 +1,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const licenses = [
+    {
+        name: 'MIT License',
+        badge: 'https://img.shields.io/badge/License-MIT-yellow.svg'
+    },
+    {
+        name: 'GNU GPLv3',
+        badge: 'https://img.shields.io/badge/License-GPLv3-blue.svg'
+    },
+    // Add more license options as needed
+];
+
 
 inquirer.prompt([
     {
@@ -27,11 +39,14 @@ inquirer.prompt([
         name: 'usage',
         message: 'Enter project usage information:'
     },
+
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'Enter project license:'
+        message: 'Choose a license for your application:',
+        choices: licenses.map(license => license.name)
     },
+
     {
         type: 'input',
         name: 'contributing',
@@ -50,6 +65,7 @@ inquirer.prompt([
 
     // Add more prompts for other sections like installation, usage, license, etc.
 ]).then((answers) => {
+    const selectedLicense = licenses.find(license => license.name === answers.license);
     const readmeContent = `
 # ${answers.title}
 
@@ -67,6 +83,11 @@ ${answers.contributing}
 
 ## Test Instructions
 ${answers.test}
+
+## License
+[![License](${selectedLicense.badge})](${selectedLicense.name})
+
+This application is covered under the ${selectedLicense.name}.
 `;
 
     // Write the generated README content to a file
