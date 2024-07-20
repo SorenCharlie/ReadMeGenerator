@@ -2,7 +2,7 @@
 # ReadMe Generator
 
 ## Description
-This project quickly and easliy generates a ReadMe file so the dev can spend more time on the project.
+Allows a dev to quickly create a ReadMe file
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,16 +13,16 @@ This project quickly and easliy generates a ReadMe file so the dev can spend mor
 - [Questions](#questions)
 
 ## Instalation
-To install this applicaiton [add steps]
+[add steps]
 
 ## Usage
-This is designed so a programmer can quickly create a ReadMe and spend most of their time developing the app
+[add usage]
 
 ## Contribution
 Soren Rowden
 
 ## Test Instructions
-
+[add testing info]
 
 ## License
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)(GNU GPLv3)
