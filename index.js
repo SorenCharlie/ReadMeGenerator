@@ -102,7 +102,7 @@ For any questions, please email ${answers.githubEmail}.
 `;
 
     // Write the generated README content to a file
-    fs.writeFile('README.md', readmeContent, (err) => {
+    fs.writeFile('./Output/README.md', readmeContent, (err) => {
         if (err) {
             console.error(err);
         } else {
